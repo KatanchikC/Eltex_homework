@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#
+cd /home/student/Eltex_work/Eltex_homework/HW3/task3
+
+# Создание папок и файлов 
+for i in {1..20}
+do
+	mkdir $i
+	touch $i/$i.txt
+done
+
+# Создание ссылок на файлы
+for i in {1..20} 
+do 
+	ln $i/$i.txt link$i.txt
+done
+
+# Удаление всех файлов, которые не имеют цифру 4
+
+ls | grep -v 4 | xargs rm -r
+
+# Изменение файла 14
+
+echo "chto to" > 14/14.txt
+
