@@ -1,0 +1,26 @@
+#!/bin/bash
+
+cd /home/student/Eltex_work/Eltex_homework/HW3
+
+echo " Права доступа в числовом виде:
+Нет доступа - 0
+Выполнение - 1
+Запись - 2
+Чтение - 4
+Полный доступ - 7
+"
+
+
+echo "Введите права для владельца:"
+read U
+
+echo "Введите права для группы:"
+read G
+
+echo "Введите права для остальных:"
+read O
+
+Result=$(echo -n "$U$G$O")
+Result_num=$(printf "%d\n" $Result)
+
+chmod $Result_num script
